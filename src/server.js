@@ -1,36 +1,7 @@
 const { ApolloServer, gql } = require("apollo-server");
 
+const typeDefs = require("./schema");
 const SpacexApi = require("./datasources/spacexApi");
-
-// Type definitions define the "shape" of your data and specify
-// which ways the data can be fetched from the GraphQL server.
-const typeDefs = gql`
-  # Comments in GraphQL are defined with the hash (#) symbol.
-  type Launch {
-    id: ID!
-    site: String
-    mission: Mission
-    rocket: Rocket
-    isBooked: Boolean!
-  }
-
-  type Mission {
-    name: String
-  }
-
-  type Rocket {
-    id: ID!
-    name: String
-    type: String
-  }
-
-  # The "Query" type is the root of all GraphQL queries.
-  # (A "Mutation" type will be covered later on.)
-  type Query {
-    books: [Book]
-    launch(id: ID!): Launch
-  }
-`;
 
 // Resolvers define the technique for fetching the types in the
 // schema.  We'll retrieve books from the "books" array above.
