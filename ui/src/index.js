@@ -4,6 +4,8 @@ import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 import gql from "graphql-tag";
 
+import SpaceXLaunches from "./SpaceXLaunches";
+
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql"
 });
@@ -37,6 +39,7 @@ const App = () => (
           🚀
         </span>
       </h2>
+      <SpaceXLaunches />
     </div>
   </ApolloProvider>
 );
