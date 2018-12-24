@@ -1,0 +1,23 @@
+{
+  "name": "mysurfapp",
+  "version": "1.0.0",
+  "description": "MySurfApp",
+  "dependencies": {
+    "apollo-server": "^2.3.1",
+    "graphql": "^14.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frantzyy/mySurfApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frantzyy/mySurfApp/issues"
+  },
+  "homepage": "https://github.com/frantzyy/mySurfApp#readme"
+}
