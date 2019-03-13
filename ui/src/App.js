@@ -1,42 +1,36 @@
 import React, { Component } from "react";
+
+//GraphQL setup
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
-import gql from "graphql-tag";
+
+//Material UI config
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
+//Configs
+import basicLaunchInfoQuery from "./queries/basicLaunchInfoQuery";
 import customTheme from "./customTheme.json";
-import SpaceXLaunches from "./SpaceXLaunches";
-import HelloWorld from "./components/helloWorld/HelloWorld.jsx";
 
+//Components
+import HelloWorld from "./components/helloWorld/HelloWorld";
+import SpaceXLaunches from "./components/spaceXLaunches/SpaceXLaunches";
+
+//App specific
 import "./App.css";
 
 // https://in-your-saas.github.io/material-ui-theme-editor
 const theme = createMuiTheme(customTheme);
-console.log("theme create", theme);
+console.log("theme created: ", theme);
 
+//Create graphQL server
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql"
 });
 
+//test it with a basic query
 client
-  .query({
-    query: gql`
-      {
-        launch(id: 5) {
-          id
-          site
-          mission {
-            name
-          }
-          rocket {
-            id
-            name
-          }
-        }
-      }
-    `
-  })
-  .then(result => console.log(result));
+  .query(basicLaunchInfoQuery)
+  .then(result => console.log("basic launch info: ", result));
 
 class App extends Component {
   constructor(props) {
