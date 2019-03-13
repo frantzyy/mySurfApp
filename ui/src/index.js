@@ -5,41 +5,14 @@ import { ApolloProvider } from "react-apollo";
 import gql from "graphql-tag";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-
+import customtheme from "./theme.json";
 import SpaceXLaunches from "./SpaceXLaunches";
+import { TextField } from "@material-ui/core";
 
-// https://in-your-saas.github.io/material-ui-theme-editor/
-const theme = createMuiTheme({
-  palette: {
-    common: { black: "#000", white: "#fff" },
-    background: { paper: "#fff", default: "#fafafa" },
-    primary: {
-      light: "rgba(74, 144, 226, 0.52)",
-      main: "rgba(74, 144, 226, 1)",
-      dark: "rgba(74, 144, 226, 0.96)",
-      contrastText: "#fff"
-    },
-    secondary: {
-      light: "rgba(245, 166, 35, 0.35)",
-      main: "rgba(245, 166, 35, 1)",
-      dark: "rgba(245, 166, 35, 0.99)",
-      contrastText: "#fff"
-    },
-    error: {
-      light: "#e57373",
-      main: "#f44336",
-      dark: "#d32f2f",
-      contrastText: "#fff"
-    },
-    text: {
-      primary: "rgba(0, 0, 0, 0.87)",
-      secondary: "rgba(0, 0, 0, 0.54)",
-      disabled: "rgba(0, 0, 0, 0.38)",
-      hint: "rgba(0, 0, 0, 0.38)"
-    }
-  }
-});
+import AppOriginal from "./App.js";
 
+// https://in-your-saas.github.io/material-ui-theme-editor
+const theme = createMuiTheme(customtheme);
 console.log("theme create", theme);
 
 const client = new ApolloClient({
@@ -77,6 +50,7 @@ const App = () => (
           </span>
         </h2>
         <SpaceXLaunches />
+        <TextField value={this.state.name} onChange={this.handleName} />
         <Button variant="contained" color="primary">
           Hello World
         </Button>
@@ -85,7 +59,7 @@ const App = () => (
   </MuiThemeProvider>
 );
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<AppOriginal />, document.getElementById("root"));
 
 // import "./index.css";
 // import App from "./App";
