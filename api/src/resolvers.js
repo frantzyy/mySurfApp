@@ -3,20 +3,23 @@ module.exports = {
     launches: async (_, { pageSize = 20, after }, { dataSources }) => {
       const allLaunches = await dataSources.spacexApi.getAllLaunches();
       // we want these in reverse chronological order
+      console.log("allLaunches: ", allLaunches);
       allLaunches.reverse();
 
-      const launches = paginateResults({
-        after,
-        pageSize,
-        results: allLaunches
-      });
+      //TODO: paginateResults
+      // const launches = paginateResults({
+      //   after,
+      //   pageSize,
+      //   results: allLaunches
+      // });
 
       return {
-        launches
+        // launches
+        allLaunches
       };
     },
     launch: (_, { id }, { dataSources }) =>
-      dataSources.launchAPI.getLaunchById({ launchId: id }),
-    me: async (_, __, { dataSources }) => dataSources.userAPI.findOrCreateUser()
+      dataSources.spacexApi.getLaunchById({ launchId: id })
+    // me: async (_, __, { dataSources }) => dataSources.userAPI.findOrCreateUser()
   }
 };

@@ -26,6 +26,7 @@ const typeDefs = gql`
   # (A "Mutation" type will be covered later on.)
   type Query {
     launch(id: ID!): Launch
+    launches: [Launch]!
   }
 `;
 
