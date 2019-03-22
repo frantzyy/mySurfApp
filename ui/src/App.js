@@ -49,9 +49,9 @@ class App extends Component {
                 🚀
               </span>
             </h2>
+            <HelloWorld />
             <SpaceXLaunches />
             <LaunchList />
-            <HelloWorld />
           </div>
         </ApolloProvider>
       </MuiThemeProvider>

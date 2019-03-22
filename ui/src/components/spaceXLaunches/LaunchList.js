@@ -25,19 +25,27 @@ const LaunchList = () => (
       if (error) return <p>Error :(</p>;
       console.log(data);
 
+      const iterateLaunches = data.launches.map(function(launch, index) {
+        return (
+          <tr key={index}>
+            <td>{launch.id}</td>
+            <td>{launch.mission.name}</td>
+            <td>{launch.rocket.name}</td>
+          </tr>
+        );
+      });
+
       return (
         <div>
           <table>
-            <tr>
-              <th>Mission Id</th>
-              <th>Mission Name</th>
-              <th>Rocket Name</th>
-            </tr>
-            <tr>
-              <td>{data.launches[0].id}</td>
-              <td>{data.launches[0].mission.name}</td>
-              <td>{data.launches[0].rocket.name}</td>
-            </tr>
+            <thead>
+              <tr>
+                <th>Mission Id</th>
+                <th>Mission Name</th>
+                <th>Rocket Name</th>
+              </tr>
+            </thead>
+            <tbody>{iterateLaunches}</tbody>
           </table>
         </div>
       );
