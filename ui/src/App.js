@@ -14,6 +14,7 @@ import customTheme from "./customTheme.json";
 //Components
 import HelloWorld from "./components/helloWorld/HelloWorld";
 import SpaceXLaunches from "./components/spaceXLaunches/SpaceXLaunches";
+import LaunchList from "./components/spaceXLaunches/LaunchList";
 
 //App specific
 import "./App.css";
@@ -49,6 +50,7 @@ class App extends Component {
               </span>
             </h2>
             <SpaceXLaunches />
+            <LaunchList />
             <HelloWorld />
           </div>
         </ApolloProvider>
