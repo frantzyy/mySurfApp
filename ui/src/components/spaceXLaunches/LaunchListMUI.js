@@ -37,10 +37,12 @@ function LaunchListMUI(props) {
             site
             mission {
               name
+              missionPatchSmall
             }
             rocket {
               id
               name
+              type
             }
           }
         }
@@ -55,8 +57,13 @@ function LaunchListMUI(props) {
           return (
             <TableRow key={index}>
               <TableCell>{launch.id}</TableCell>
+              <TableCell>{launch.site}</TableCell>
               <TableCell>{launch.mission.name}</TableCell>
+              <TableCell>
+                <img src={launch.mission.missionPatchSmall} />
+              </TableCell>
               <TableCell>{launch.rocket.name}</TableCell>
+              <TableCell>{launch.rocket.type}</TableCell>
             </TableRow>
           );
         });
@@ -66,9 +73,12 @@ function LaunchListMUI(props) {
             <Table className={classes.table}>
               <TableHead>
                 <TableRow>
-                  <TableCell>Mission Id</TableCell>
+                  <TableCell>Launch Id</TableCell>
+                  <TableCell>Launch Site</TableCell>
                   <TableCell>Mission Name</TableCell>
+                  <TableCell>Mission Patch</TableCell>
                   <TableCell>Rocket Name</TableCell>
+                  <TableCell>Rocket Type</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>{iterateLaunches}</TableBody>

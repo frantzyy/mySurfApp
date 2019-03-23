@@ -14,6 +14,7 @@ const typeDefs = gql`
 
   type Mission {
     name: String
+    missionPatchSmall: String
   }
 
   type Rocket {
