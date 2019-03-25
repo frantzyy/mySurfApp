@@ -14,7 +14,7 @@ import customTheme from "./customTheme.json";
 //Components
 import HelloWorld from "./components/helloWorld/HelloWorld";
 import SpaceXLaunches from "./components/spaceXLaunches/SpaceXLaunches";
-import LaunchList from "./components/spaceXLaunches/LaunchList";
+import LaunchDetail from "./components/spaceXLaunches/LaunchDetail";
 import LaunchListMUI from "./components/spaceXLaunches/LaunchListMUI";
 
 //App specific
@@ -52,6 +52,7 @@ class App extends Component {
             </h2>
             <HelloWorld />
             <SpaceXLaunches />
+            <LaunchDetail launchID="10" />
             <LaunchListMUI />
           </div>
         </ApolloProvider>
