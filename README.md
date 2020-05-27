@@ -15,7 +15,7 @@ What I've done so far:
 ### Client
 
 `cd ./ui`
-`yarn install`
+`npm install`
 `npm run start`
 
 - launch browser to: http://localhost:8080
@@ -25,7 +25,7 @@ What I've done so far:
 ### Server
 
 `cd ./api`
-`yarn install`
+`npm install`
 `npm run start`
 
 - Express w/Apollo GraphQL api will load on http://localhost:4000
