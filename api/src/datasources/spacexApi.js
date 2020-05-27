@@ -12,6 +12,8 @@ class SpacexApi extends RESTDataSource {
       id: launch.flight_number || 0,
       cursor: `${launch.launch_date_unix}`,
       site: launch.launch_site && launch.launch_site.site_name,
+      details: launch.details,
+      when: launch.launch_date_local,
       mission: {
         name: launch.mission_name,
         missionPatchSmall: launch.links.mission_patch_small,
@@ -45,6 +47,10 @@ class SpacexApi extends RESTDataSource {
 
   async getNextLaunch() {
     const res = await this.get("launches/next");
+    // let resCopy = {};
+    console.log(res);
+    // resCopy.launch = res.nextLaunch;
+
     return this.launchReducer(res);
   }
 }
