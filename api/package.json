@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "MySurfApp",
   "dependencies": {
-    "apollo-datasource-rest": "^0.2.1",
-    "apollo-server": "^2.3.1",
-    "graphql": "^14.0.2"
+    "apollo-datasource-rest": "^0.9.2",
+    "apollo-server": "^2.14.0",
+    "graphql": "^15.0.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.10"
+    "nodemon": "^2.0.4"
   },
   "scripts": {
     "start": "nodemon ./src/server.js"
