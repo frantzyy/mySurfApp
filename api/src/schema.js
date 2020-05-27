@@ -28,6 +28,7 @@ const typeDefs = gql`
   type Query {
     launch(id: ID!): Launch
     launches: [Launch]!
+    nextLaunch: Launch
   }
 `;
 

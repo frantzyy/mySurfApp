@@ -42,6 +42,11 @@ class SpacexApi extends RESTDataSource {
       launchIds.map(launchId => this.getLaunchById({ launchId }))
     );
   }
+
+  async getNextLaunch() {
+    const res = await this.get("launches/next");
+    return this.launchReducer(res);
+  }
 }
 
 module.exports = SpacexApi;
