@@ -9,7 +9,10 @@ module.exports = {
     },
 
     launch: (_, { id }, { dataSources }) =>
-      dataSources.spacexApi.getLaunchById({ launchId: id })
+      dataSources.spacexApi.getLaunchById({ launchId: id }),
     // me: async (_, __, { dataSources }) => dataSources.userAPI.findOrCreateUser()
+
+    nextLaunch: (_, __, { dataSources }) =>
+      dataSources.spacexApi.getNextLaunch()
   }
 };
