@@ -7,6 +7,8 @@ const typeDefs = gql`
   type Launch {
     id: ID!
     site: String
+    site_id: String
+    siteDetail: SiteDetail
     when: String
     mission: Mission
     rocket: Rocket
@@ -25,12 +27,28 @@ const typeDefs = gql`
     type: String
   }
 
+  type Location {
+    name: String
+    region: String
+    lat: Int
+    long: Int
+  }
+
+  type SiteDetail {
+    id: ID!
+    site_id: String
+    name: String
+    details: String
+    location: Location
+  }
+
   # The "Query" type is the root of all GraphQL queries.
   # (A "Mutation" type will be covered later on.)
   type Query {
     launch(id: ID!): Launch
     launches: [Launch]!
     nextLaunch: Launch
+    siteDetail(siteId: String): SiteDetail
   }
 `;
 

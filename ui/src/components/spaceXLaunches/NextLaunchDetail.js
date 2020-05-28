@@ -13,6 +13,10 @@ const SpaceXLaunches = () => (
           site
           details
           when
+          siteDetail {
+            name
+            details
+          }
           mission {
             name
             missionPatchSmall
@@ -35,10 +39,17 @@ const SpaceXLaunches = () => (
           <div>
             <h1>Next Launch is: {data.nextLaunch.when}</h1>
             <h3>{data.nextLaunch.mission.name}</h3>
+            <p>{data.nextLaunch.details}</p>
+
+            <h3>Launch Site: {data.nextLaunch.siteDetail.name}</h3>
+            <p>{data.nextLaunch.siteDetail.details}</p>
             <span>
-              <img src={data.nextLaunch.mission.missionPatchSmall} />
+              <img
+                width="300"
+                height="300"
+                src={data.nextLaunch.mission.missionPatchSmall}
+              />
             </span>
-            <p> Details: {data.nextLaunch.details}</p>
             <ul>
               <li>Launch Id: {data.nextLaunch.id}</li>
               <li>Launch Site: {data.nextLaunch.site}</li>
