@@ -7,6 +7,7 @@ const typeDefs = gql`
   type Launch {
     id: ID!
     site: String
+    site_id: String
     siteDetail: SiteDetail
     when: String
     mission: Mission

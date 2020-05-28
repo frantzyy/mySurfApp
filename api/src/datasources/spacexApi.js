@@ -12,6 +12,7 @@ class SpacexApi extends RESTDataSource {
       id: launch.flight_number || 0,
       cursor: `${launch.launch_date_unix}`,
       site: launch.launch_site && launch.launch_site.site_name,
+      site_id: launch.launch_site.site_id,
       details: launch.details,
       when: launch.launch_date_local,
       mission: {
