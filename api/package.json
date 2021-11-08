@@ -4,7 +4,7 @@
   "description": "MySurfApp",
   "dependencies": {
     "apollo-datasource-rest": "^0.9.2",
-    "apollo-server": "^2.14.0",
+    "apollo-server": "^2.25.3",
     "graphql": "^15.0.0"
   },
   "devDependencies": {
